@@ -1,0 +1,10 @@
+.sidenavover{
+    text-decoration: none;
+    background-color:white;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 0px 0px;
+    font-size: 12px;
+}

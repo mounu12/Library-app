@@ -1,0 +1,47 @@
+.bookdetailimage{
+
+    /* margin-top: 30px; */
+    width: 100%;
+    height: 100%;
+    margin-left: -15px;
+}
+.detaildescription{
+    margin-top: 30px;
+}
+.aboutauthor{
+    margin-left: -120px;
+}
+.addcart{
+    box-shadow: 0 0 0 4px rgba(0,0,0,.1);
+    margin-top: 55%;
+}
+.panel-heading{
+    padding: 14px 18px;
+}
+.buynow{
+    margin-top: 10px;
+    width: 94%;
+}
+.descbuttons{
+padding: 3px 6px 0 14px;
+margin-top: 30px;
+}
+.sudhamurthydesc{
+    font-size: 17px;
+    font-weight: 700;
+}
+.booksubtitle{
+    font-weight: 400!important;
+    font-style: normal!important;
+    text-transform: none!important;
+    text-decoration: none!important;
+    color: #555;
+    
+}
+.aboutauthor{
+    margin-top: -20px;
+    padding: 0px 200px;
+}
+.categoriesmap{
+    margin-top: -15px;
+}
