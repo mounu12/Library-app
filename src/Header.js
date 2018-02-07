@@ -1,14 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link} from 'react-router-dom';
 import FaIconPack from 'react-icons/lib/fa/shopping-cart';
 import Icon from 'react-icons-kit';
 import { location2 } from 'react-icons-kit/icomoon/location2';  
-
+import Modal from 'react-responsive-modal';
 
 
  require('./css/header.css');
-export default () => {
+ export default class Header extends React.Component {
+  state = {
+    openFirstModal: false,
+    openSecondModal: false,
+  };
+  onOpenFirstModal = () => {
+    this.setState({ openFirstModal: true });
+  };
+
+  onCloseFirstModal = () => {
+    this.setState({ openFirstModal: false });
+  };
+  render(){
+    const { openFirstModal} = this.state;
+   
   return(
    <div>
         <div className="navbar navbar-default ">
@@ -26,7 +40,7 @@ export default () => {
    
         </div>
         <div className="col-md-4">
-        <img src={require('./assets/offerr.jpg')} />
+        <img src={require('./assets/offerr.jpg')} alt=""/>
         </div>
            </div>
          </div>
@@ -34,19 +48,34 @@ export default () => {
        
          <div className="container">
          <div className="navbar-header pull-left leftsidenames">
-         <ul className="nav navbar-nav navbar-left">
+         <ul className="nav navbar-left navbar-nav">
          
-        <li className="categoriesmap"> <NavLink activeClassName='active' to="/" activeStyle={{ color:'#fff' }}><Icon icon={location2} style={{color:'#fff'}}/>
+        <li className="categoriesmap" onClick={this.onOpenFirstModal}> <NavLink activeClassName='active' to="/" activeStyle={{ color:'#fff' }}><Icon icon={location2} style={{color:'#fff'}}/>
         <span className="">Delivery to</span> <br/> Secundrabad</NavLink></li> 
-         <li className="categories"><NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Your Library.in<br/>
+         <li className="categories">
+         <NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Your Library.in<br/>
+           </NavLink ></li>
+           <li className="categories">
+           <NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Today's Deals<br/>
             </NavLink ></li>
-           <li className="categories"><NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Today's Deals<br/>
+            <li className="categories">
+            <NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Sell<br/>
             </NavLink ></li>
-            <li className="categories"><NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Sell<br/>
-            </NavLink ></li>
-            <li  className="categories"><NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Customer Service<br/>
+            <li  className="categories">
+            <NavLink  activeClassName='active' to="/" activeStyle={{ color:'#fff' }}>Customer Service<br/>
             </NavLink ></li>
            </ul>
+           <Modal open={openFirstModal} onClose={this.onCloseFirstModal} little>
+        
+           <p>
+         <h5><b>Choose Your Delivery Location</b></h5>
+        <h6>select a delivery location to see product availability and<br/>delivery options</h6>
+        <Link className=" btn btn-warning signinbtn" to="/login" onClick={this.onCloseFirstModal}>
+        <span className="txtclr">Signin to see your addresses</span>
+        </Link>
+       
+      </p>
+        </Modal>
            </div>
            <div className="navbar-header pull-right rightsidenames">
            <ul className="nav navbar-nav navbar-right">
@@ -68,7 +97,7 @@ export default () => {
           </div>
          </div> }
          </div>
-         { <div className="lastnavbar">
+          <div className="lastnavbar">
          <div className="container">
         <ul className="pull-left">
            
@@ -82,11 +111,14 @@ export default () => {
         <a href="" >Books in Indian Languages</a>
 </ul>
  </div>
- </div> }
+ </div> 
    
     
                
               
-</div> 
+</div>
+  
+
   )
 }
+ }

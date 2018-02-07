@@ -26,16 +26,16 @@ class SideNavbar extends React.Component{
             this.props.bookcategories.map((getcategorydetails,index)=>{
                
         
-        return(
-            <div key={index}>
-                <ul className="nav nav-sidebar sidenavover">
-                    <li >< Link to="/listcategorybooks" onClick={(event)=>this.handleClick(getcategorydetails)}>{getcategorydetails.category} </Link></li>
+    return(
+         <div key={index}>
+            <ul className="nav nav-sidebar sidenavover">
+                 <li >< Link to="/listcategorybooks" onClick={(event)=>this.handleClick(getcategorydetails)}>{getcategorydetails.category} </Link></li>
                     {/* <li>< Link to="/">{getcategorydetails.}</Link></li>
                     <li><Link to="/">Children's Literature & Fiction </Link></li>
                     <li><Link to="/">Biographies & Autobiographies</Link></li>
                     <li><Link to="/">Classic Fiction</Link></li> */}
-                </ul>
-            </div>
+             </ul>
+        </div>
 
         )
     })

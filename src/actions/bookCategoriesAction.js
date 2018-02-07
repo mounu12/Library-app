@@ -6,7 +6,8 @@ export const FETCH_LISTBOOKSCATEGORIES='FETCH_LISTBOOKSCATEGORIES';
 
 
 const fetchSuccess=(response)=>{
-    console.log(response.data)
+    console.log(response.data);
+ 
     return{
         type:FETCH_BOOKSCATEGORIES,
         payload:response.data
@@ -14,7 +15,8 @@ const fetchSuccess=(response)=>{
 
 }
 const fetchBooksSuccess=(response)=>{
-    console.log(response.data)
+    console.log(response.data);
+ 
     return{
         type:FETCH_LISTBOOKSCATEGORIES,
         payload:response.data
@@ -40,8 +42,10 @@ export function fetchbooknamecategories(getcategorydetails){
         }
     }
         return function(dispatch){
+          
             return axios.get('http://localhost:8761/api/library-service/category'+'/'+getcategorydetails.category,reqheaders).then(response=>{
                 dispatch(fetchBooksSuccess(response))
+                localStorage.setItem('category',getcategorydetails.category);
                 console.log(response);
             })
         }

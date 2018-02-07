@@ -19,7 +19,7 @@ export default class BookDescription extends React.Component{
          
          <div className="detaildescription">
          <div className="col-sm-3 text-center">
-         <img src={require('./assets/sudha.jpeg')} className="bookdetailimage" />
+         <img src={require('./assets/sudha.jpeg')} className="bookdetailimage" alt="" />
         </div> 
         
         <div className="col-sm-6"  >
@@ -33,7 +33,7 @@ export default class BookDescription extends React.Component{
          <h5><i className="fa fa-inr"></i>102</h5>
          <h6>Get it by monday,February 4</h6>
          <hr/>
-          <img src={require('./assets/banner.png')}  />
+          <img src={require('./assets/banner.png')}  alt=""/>
        
          {/* <div className="col-sm-6 aboutauthor"> */}
          <h5 className="aboutauthor"><b>About the author</b></h5>

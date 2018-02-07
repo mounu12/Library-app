@@ -11,7 +11,7 @@ export const loginNewUser = (user)=>{
   }).then(function(response){
       console.log(response);
       sessionStorage.setItem('token',response.data.token);
-     if(response.status==200){
+     if(response.status===200){
         //  browserHistory.push('/dashboard')
      }
 

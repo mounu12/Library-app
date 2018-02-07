@@ -1,50 +1,42 @@
 import React,{Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {loginNewUser} from './actions/loginAction'
+import {loginNewUser} from './actions/loginAction';
+import { Link} from 'react-router-dom';
 require('./css/login.css');
 
 class Login extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
+    // constructor(props){
+    //     super(props);
+    //     this.state={
             
-            username:'',
-              password:''
+    //         username:'',
+    //           password:''
          
             
              
-        }
-         this.loginUser = this.loginUser.bind(this);
+    //     }
+    //      this.loginUser = this.loginUser.bind(this);
         
-    }
+    // }
 
-    loginUser(event){
-        event.preventDefault();
-        var self = this;
-        var user={
-            "username":this.state.username,
-            "password":this.state.password
-        }
+//     loginUser(event){
+//         event.preventDefault();
+//         var self = this;
+//         var user={
+//             "username":this.state.username,
+//             "password":this.state.password
+//         }
+//         onClick={(event)=>this.loginUser(event)}
       
-        console.log(user)
+//         console.log(user)
        
-        // var usercredentials=user.username+':'+user.password;
-        // var encoded=Base64.encode(usercredentials);
-        // var config={
-   
-        // 'Content-Type': 'application/json; charset=utf-8',
-        // 'Authorization': 'Basic ' + encoded,
-        // 'caller':"ADMIN",
-        // 'tenant':"TSRTC"
-            
-        
-        // }
-        this.props.loginNewUser(user);
+       
+//         this.props.loginNewUser(user);
   
     
  
-}
+// }
          
      
     render(){
@@ -73,8 +65,8 @@ class Login extends React.Component{
                     </label>
                 </div>
                 <div className="submitButton">
-                    <button type="submit"  className="btn btn-default" onClick={(event)=>this.loginUser(event)}>Submit</button>
-                </div>
+               < Link to="/listofbooks">  <button type="submit"  className="btn btn-default" >Submit</button>
+               </ Link> </div>
                 </form>
             </div>
         </div>

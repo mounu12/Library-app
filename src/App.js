@@ -10,6 +10,9 @@ import Login from './login';
 import Homepage from './Home';
 import BookDescription from './bookDescription';
 import ListCategoryBooks from './listcategorybooks';
+import LisofBookDetails from './LIstofBooks';
+import AddingBooks from './addbookForm';
+
 
 const store=createStore(allReducers,applyMiddleware(thunk));
 
@@ -29,6 +32,8 @@ class App extends Component {
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/bookdescription" component={BookDescription}></Route>
           <Route exact path="/listcategorybooks" component={ListCategoryBooks}></Route>
+          <Route exact path="/listofbooks" component={LisofBookDetails}></Route>
+          <Route exact path="/addnewbook" component={AddingBooks}></Route>
          
          </Switch>
          </div>

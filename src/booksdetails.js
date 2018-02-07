@@ -39,7 +39,7 @@ class BookDetails extends Component{
                           
                              <div className="row bookdetails">
                              <div className="col-sm-3 text-center">
-                             <Link className="" to="/bookdescription"><img src={require('./assets/sudha.jpeg')} /></Link>
+                             <Link className="" to="/bookdescription"><img src={require('./assets/sudha.jpeg')} alt=""/></Link>
                             </div> 
                             
                             <div className="col-sm-6 col-md-9"  >

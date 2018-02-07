@@ -8,8 +8,7 @@ const allReducers=combineReducers({
     
    book:bookReducer,
    loginuser:LoginReducer,
-   bookcategories:bookcategoryReducer,
-   categorybooks:bookcategoryReducer
+   bookcategories:bookcategoryReducer
     
     });
 
