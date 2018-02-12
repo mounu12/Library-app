@@ -20,7 +20,7 @@ export function fetchbooks(){
                  }
     }
     return function(dispatch){
-        return axios.get('http://localhost:8761/api/library-service/book/1?search=let',reqheaders).then(response=>{
+        return axios.get('http://localhost:8761/api/library-service/book/1?search=',reqheaders).then(response=>{
             dispatch(fetchSuccess(response))
         })
     }

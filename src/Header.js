@@ -7,6 +7,7 @@ import { location2 } from 'react-icons-kit/icomoon/location2';
 import Modal from 'react-responsive-modal';
 
 
+
  require('./css/header.css');
  export default class Header extends React.Component {
   state = {

@@ -4,7 +4,8 @@ import Headers from './Header';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {BrowserRouter, Route,Switch} from 'react-router-dom';
+import {Router, Route,Switch} from 'react-router-dom';
+import history from './history';
 import allReducers from './reducers';
 import Login from './login';
 import Homepage from './Home';
@@ -12,6 +13,7 @@ import BookDescription from './bookDescription';
 import ListCategoryBooks from './listcategorybooks';
 import LisofBookDetails from './LIstofBooks';
 import AddingBooks from './addbookForm';
+
 
 
 const store=createStore(allReducers,applyMiddleware(thunk));
@@ -22,7 +24,8 @@ class App extends Component {
     return (
       <div>
         <Provider store={store}>
-          <BrowserRouter>
+        <Router history={history}>
+          
          
         <div>
         <Headers/>
@@ -38,7 +41,7 @@ class App extends Component {
          </Switch>
          </div>
       
-        </BrowserRouter>
+       </Router>
        </Provider>
         </div>
     );

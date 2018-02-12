@@ -27,12 +27,13 @@ class Login extends React.Component{
 //             "username":this.state.username,
 //             "password":this.state.password
 //         }
-//         onClick={(event)=>this.loginUser(event)}
-      
+         
 //         console.log(user)
+        
+
+//onClick={(event)=>this.loginUser(event)}
        
-       
-//         this.props.loginNewUser(user);
+//          this.props.loginNewUser(user);
   
     
  

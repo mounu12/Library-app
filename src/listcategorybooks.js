@@ -4,7 +4,13 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import { Link} from 'react-router-dom';
 import {fetchbooknamecategories} from './actions/bookCategoriesAction';
+import ReactStars from 'react-stars';
 
+const ratingChanged = (newRating) => {
+    console.log(newRating);
+    <p>{newRating}</p>
+    
+  }
 class ListCategoryBooks extends React.Component{
     state={
         moreabout:[],
@@ -38,12 +44,22 @@ class ListCategoryBooks extends React.Component{
             console.log(this.state.moreabout)
           return(
               <div>
-                <ConfigSidebar />           
+              
+                  <div className="col-lg-2 configside">
+                 <ConfigSidebar />    
+                 </div>  
+                 {/* <h6 className="languages">English & Indian Languages:
+            <a className="englishbook" href="/">English</a>|
+             <a className="englishbook" href="/"> Hindi </a>|
+             <a className="englishbook" href="/"> Telugu</a>
+             </h6> */}
+                 <div className="col-lg-8 bookdetails"> 
+                   
               <div>{
                 this.state.moreabout.map((something,index)=>{
                     return(
                         <div key={index}>
-                           
+                   
                            <div className="row bookdetails">
                              <div className="col-sm-3 text-center">
                              <Link className="" to="/bookdescription"><img src={require('./assets/sudha.jpeg')} alt=""/></Link>
@@ -61,17 +77,22 @@ class ListCategoryBooks extends React.Component{
                              </div>
                            
                         
-                        {/* <div className="col-sm-3 pull-right reactstars">
+                        <div className="col-sm-3 pull-right reactstars">
                         <ReactStars count={5} size={24} color={'#feaa5d'} onChange={ratingChanged}/>
                       <div>{this.ratingChanged}</div>
                       
-                        </div> */}
-                        
                         </div>
-                     </div>
+                       
+                        </div>
+                        <hr/>
+                    </div>
+
                     )
+                    
                 })
               }</div>
+               </div>
+               
               </div>
           )
         

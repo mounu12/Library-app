@@ -1,5 +1,6 @@
 import axios from 'axios';
-// import{Router , Route ,browserHistory } from 'react-router';
+import history from '../history';
+
 
 export const FETCH_BOOKSCATEGORIES='FETCH_BOOKSCATEGORIES';
 export const FETCH_LISTBOOKSCATEGORIES='FETCH_LISTBOOKSCATEGORIES';
@@ -47,6 +48,9 @@ export function fetchbooknamecategories(getcategorydetails){
                 dispatch(fetchBooksSuccess(response))
                 localStorage.setItem('category',getcategorydetails.category);
                 console.log(response);
+                if(response.status===200){
+                    history.push('/listcategorybooks');
+                }
             })
         }
     }

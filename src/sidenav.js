@@ -7,7 +7,6 @@ import {fetchbookscategories,fetchbooknamecategories} from './actions/bookCatego
 require('./css/sidenav.css');
 
 
-
 class SideNavbar extends React.Component{
 
     componentWillMount(){
@@ -29,7 +28,7 @@ class SideNavbar extends React.Component{
     return(
          <div key={index}>
             <ul className="nav nav-sidebar sidenavover">
-                 <li >< Link to="/listcategorybooks" onClick={(event)=>this.handleClick(getcategorydetails)}>{getcategorydetails.category} </Link></li>
+                 <li >< Link to="/" onClick={(event)=>this.handleClick(getcategorydetails)}>{getcategorydetails.category} </Link></li>
                     {/* <li>< Link to="/">{getcategorydetails.}</Link></li>
                     <li><Link to="/">Children's Literature & Fiction </Link></li>
                     <li><Link to="/">Biographies & Autobiographies</Link></li>
